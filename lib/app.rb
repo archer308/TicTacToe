@@ -3,15 +3,15 @@
 class App
 	def initialize
 		puts "Welcome to Tic Tac Toe!"
-		puts "Who is human, X or O?  "
-		choice = STDIN.gets.chomp.downcase
+		puts "Who is human, #{Board::PLAYER_X_TOKEN} or #{Board::PLAYER_O_TOKEN}?  "
+		choice = STDIN.gets.chomp.upcase
 		case choice
-		when 'x'
+		when Board::PLAYER_X_TOKEN
 			@human_is_X = true
-		when 'o'
+		when Board::PLAYER_O_TOKEN
 			@human_is_X = false
 		else
-			puts "We'll just make you X..."
+			puts "We'll just make you #{Board::PLAYER_X_TOKEN}..."
 			@human_is_X = true
 		end
 	end
