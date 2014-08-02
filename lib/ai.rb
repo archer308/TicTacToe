@@ -30,7 +30,6 @@ class AI < Player
 			scores[spot] = minimax(board_copy)
 		end
 
-		puts scores if $DEBUG
 		if board.playerX_is_up?
 			max = scores.max_by{|k,v| v}
 			@choice = max[0]
