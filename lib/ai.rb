@@ -7,7 +7,7 @@ class AI < Player
 	def move( board )
     	return false if board.full?
 
-    	puts "Thinking..."
+    	UI.msg("Thinking...")
     	minimax( board )
 
 		board.dropPiece @choice
