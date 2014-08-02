@@ -11,7 +11,6 @@ class AI < Player
     	minimax( board )
 
 		board.dropPiece @choice
-		true
 	end
 
 

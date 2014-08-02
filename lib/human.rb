@@ -17,8 +17,6 @@ class Human < Player
 			puts 'Please select an open space on the board.'
 			return move( board )
 		end
-
-		true
 	end
 
 end
