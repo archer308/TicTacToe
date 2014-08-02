@@ -19,8 +19,7 @@ class App
 	def run
 		puts ""
 		
-		playerX = @human_is_X ? Human.new('Fry') : AI.new('Bender')
-		playerO = @human_is_X ? AI.new('Bender') : Human.new('Fry')
+		playerX, playerO = create_players()
 
 		game = Game.new(
 			playerX,
@@ -34,5 +33,19 @@ class App
 		if choice.downcase == 'y'
 			run
 		end
+	end
+
+	private
+	def create_players
+		human = Human.new('Fry')
+		computer = AI.new('Bender')
+		if @human_is_X
+			player_x = human
+			player_o = computer
+		else
+			player_x = computer
+			player_o = human
+		end
+		[player_x, player_o]
 	end
 end
