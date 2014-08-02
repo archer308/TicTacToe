@@ -7,8 +7,8 @@ class Board
 	CENTER = 4
 	WINNING_SCORE = 12
 
-	PLAYER_X_TOKEN = 'X'
-	PLAYER_O_TOKEN = 'O'
+	PLAYER_ONE_TOKEN = 'X'
+	PLAYER_TWO_TOKEN = 'O'
 
 	def initialize
 		@board = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
@@ -27,9 +27,9 @@ EOS
 
 	def dropPiece( spot )
 		if spotOpen?( spot )
-			p = PLAYER_X_TOKEN
+			p = PLAYER_ONE_TOKEN
 			if getXPieces( ).count > getOPieces( ).count
-				then p = PLAYER_O_TOKEN
+				then p = PLAYER_TWO_TOKEN
 			end
 			@board[spot] = p
 			return true
@@ -42,11 +42,11 @@ EOS
 	end
 
 	def getXPieces
-		@board.each_index.select{ |i| @board[i] == PLAYER_X_TOKEN }
+		@board.each_index.select{ |i| @board[i] == PLAYER_ONE_TOKEN }
 	end
 
 	def getOPieces
-		@board.each_index.select{ |i| @board[i] == PLAYER_O_TOKEN }
+		@board.each_index.select{ |i| @board[i] == PLAYER_TWO_TOKEN }
 	end
 
 	def getAllPieces

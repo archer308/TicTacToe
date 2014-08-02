@@ -13,7 +13,7 @@ class Game
 
 
 	def run
-		piece = @playerup == @playerX ? Board::PLAYER_X_TOKEN : Board::PLAYER_O_TOKEN
+		piece = @playerup == @playerX ? Board::PLAYER_ONE_TOKEN : Board::PLAYER_TWO_TOKEN
 		puts "#{@playerup.name} (#{piece}) is up."
 
 		@playerup.move @board
