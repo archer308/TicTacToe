@@ -14,7 +14,7 @@ class Player
 	# Public Methods
 
 	def draw
-		puts "Name: #{@name}"
+		UI.msg("Name: #{@name}")
 	end
 
 

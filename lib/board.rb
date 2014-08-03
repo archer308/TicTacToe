@@ -17,12 +17,13 @@ class Board
 
 
 	def draw
-		puts <<-EOS
+		string = <<-EOS
 The Board:
 #{@board[7]} #{@board[0]} #{@board[5]}
 #{@board[2]} #{@board[4]} #{@board[6]}
 #{@board[3]} #{@board[8]} #{@board[1]}
 EOS
+		UI.msg(string)
 	end
 
 	def dropPiece( spot )
